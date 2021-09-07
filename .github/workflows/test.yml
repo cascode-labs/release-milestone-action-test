@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Clone repo to check
         run: |
-          ssh-agent bash -c 'ssh-add ${{ secrets.GITHUB_TOKEN }}; git clone git@github.com:cascode-labs/release-milestone-action.git'
+          git clone cascode-labs/release-milestone-action
       - uses: ./release-milestone-action/actions.yml
       - name: Check Artifacts
         run: |
