@@ -1,0 +1,26 @@
+name: Test
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+  milestone:
+    types: [closed]
+
+jobs:
+  test-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: cascode-labs/release-milestone-action/actions.yml@1
+      - uses: actions/download-artifact@v2
+      - name: Check Artifacts
+        run: |
+          ls -al
+          if [ ! -f Release_Note_Log.md ]; then
+            echo "Release Log was not created."
+          else
+            echo "Action successfully created release log."
+          fi
