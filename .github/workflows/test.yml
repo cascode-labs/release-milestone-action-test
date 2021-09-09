@@ -20,8 +20,12 @@ jobs:
       - name: Clone repo to check
         run: |
           git clone https://github.com/cascode-labs/release-milestone-action.git
-          ls -al
       - uses: actions/checkout@main 
+      - name: Check repo
+        run: |
+          ls -al
+          echo "-----"
+          ls -al release-milestone-action
       - uses: ./release-milestone-action/action.yml
       - name: Check Artifacts
         run: |
