@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Clone repo to check
         run: |
-          gh repo clone cascode-labs/release-milestone-action
+          git clone https://github.com/cascode-labs/release-milestone-action.git
       - uses: ./release-milestone-action/actions.yml
       - name: Check Artifacts
         run: |
