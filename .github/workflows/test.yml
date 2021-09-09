@@ -11,12 +11,15 @@ on:
 jobs:
   test-artifact:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Clone repo to check
         run: |
-          git clone cascode-labs/release-milestone-action
+          git clone git@github.com:cascode-labs/release-milestone-action.git
       - uses: ./release-milestone-action/actions.yml
       - name: Check Artifacts
         run: |
