@@ -22,7 +22,7 @@ jobs:
           git clone https://github.com/cascode-labs/release-milestone-action.git
           ls -al
       - uses: actions/checkout@main 
-      - uses: ./release-milestone-action/actions.yml
+      - uses: ./release-milestone-action/action.yml
       - name: Check Artifacts
         run: |
           ls -al
