@@ -24,6 +24,7 @@ jobs:
         run: |
           ls -al
           echo "-----"
+          pwd
           ls -al release-milestone-action
       - uses: ./release-milestone-action/action.yml
       - name: Check Artifacts
