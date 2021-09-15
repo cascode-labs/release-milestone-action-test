@@ -20,6 +20,7 @@ jobs:
       - name: Clone repo to check
         run: |
           git clone https://github.com/cascode-labs/release-milestone-action.git
+          git clone https://github.com/cascode-labs/draft-release-action.git
       - name: Check repo
         run: |
           ls -al
@@ -27,6 +28,7 @@ jobs:
           pwd
           ls -al release-milestone-action
       - uses: ./release-milestone-action
+      - uses: ./draft-release-action
       - name: Check Artifacts
         run: |
           ls -al
